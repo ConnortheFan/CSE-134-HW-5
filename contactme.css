@@ -16,7 +16,7 @@ hgroup {
     flex-direction: column;
     gap: 10px;
     width: 100%;
-    /* margin: auto; */
+    margin-top: 16px;
 }
 
 .contact-form label {

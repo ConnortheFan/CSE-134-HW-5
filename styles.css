@@ -44,7 +44,8 @@ body {
     padding: var(--navbar-padding, 15px);
     display: block;
     text-align: center;
-    color: var(--font-color)
+    color: var(--font-color);
+    white-space: nowrap;
 }
 .navbar > ul {
     height: 100%;
@@ -176,7 +177,7 @@ input:checked + .theme-toggle:before {
 }
 
 header {
-    padding-top: 2em;
+    padding-top: 1em;
     font-size: 1.5em;
 }
 header h1 {
@@ -199,7 +200,7 @@ img {
     max-width: 100%;
 }
 
-@media (max-width:815px) {
+@media (max-width:912px) {
     input[type="checkbox"]:not(:checked) + ul {
         display: none;
     }
