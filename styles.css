@@ -236,6 +236,10 @@ img {
     .navbar #switch {
         order: 1;
     }
+    .dropdown:hover .dropdown-content {
+        opacity: 0;
+        display: none;
+    }
 } 
 
 
