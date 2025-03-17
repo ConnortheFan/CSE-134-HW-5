@@ -11,6 +11,7 @@
         
         <script src="../components/toggleTheme.js"></script>
         <script src="../components/navbar.js"></script>
+        <script src="../components/project-card.js"></script>
     </head>
 
     <body>
@@ -26,17 +27,19 @@
         </header>
 
         <main class="flex-main">
-            <hgroup>
-                <h2><a href="sudokusolver.html">Sudoku Solver</a></h2>
+            <project-card
+                title="Sudoku Solver"
+                picture="../assets/Sudoku_Puzzle_by_L2G-20050714_standardized_layout.png"
+                alt="Sudoku from Wikipedia"
+                description="This project was a personal project that I made to help teach people how to algorithmically solve Sudokus. When you run it, you should just input an unsolved Sudoku and it will output all the steps required to solve it. These steps will be detailed, so hopefully you are able to learn from them."
+                link="sudokusolver.html"
+            ></project-card>
 
-                <p>This project was a personal project that I made to help teach people how to algorithmically solve Sudokus. When you run it, you should just input an unsolved Sudoku and it will output all the steps required to solve it. These steps will be detailed, so hopefully you are able to learn from them.</p>
-            </hgroup>
-
-            <hgroup class="wip">
-                <h2><a href="project2.html">Project 2</a></h2>
-
-                <p>Placeholder project 2, not ready yet.</p>
-            </hgroup>
+            <project-card
+                title="Project 2: WIP"
+                description="Placeholder project 2, not ready yet."
+                link="project2.html"
+            ></project-card>
         </main>
     </body>
 
