@@ -206,6 +206,10 @@ img {
     max-width: 100%;
 }
 
+footer {
+    padding: 0 16px;
+}
+
 @media (max-width:912px) {
     input[type="checkbox"]:not(:checked) + ul {
         display: none;
