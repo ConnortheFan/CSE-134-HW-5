@@ -17,6 +17,9 @@ class ProjectCard extends HTMLElement {
                     padding: 16px;
                     margin: 16px;
                     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
                 }
                 .card h2 {
                     margin: 0 0 8px;
@@ -26,14 +29,28 @@ class ProjectCard extends HTMLElement {
                     margin: 0;
                     color: #666;
                 }
+                .card picture {
+                    margin-left: 16px;
+                }
+                @media (max-width: 600px) {
+                    .card {
+                        flex-direction: column;
+                    }
+                    .card picture {
+                        margin-left: 0;
+                        margin-top: 16px;
+                    }
+                }
             </style>
             <div class="card">
-                <h2>${this.getAttribute('title')}</h2>
+                <div>
+                    <h2>${this.getAttribute('title')}</h2>
+                    <p>${this.getAttribute('description')}</p>
+                    <a href=${this.getAttribute('link')}>Learn More</a>
+                </div>
                 <picture>
                     <img src=${this.getAttribute('picture')} alt=${this.getAttribute('alt')}>
                 </picture>
-                <p>${this.getAttribute('description')}</p>
-                <a href=${this.getAttribute('link')}>Learn More</a>
             </div>
         `;
     }
