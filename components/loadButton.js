@@ -11,10 +11,15 @@ function loadLocalData() {
 }
 
 function loadRemoteData() {
-    fetch('https://api.jsonbin.io/b/your-jsonbin-id')
+    fetch('https://api.jsonbin.io/v3/b/67d7b3a68960c979a5731052')
         .then(response => response.json())
         .then(data => {
-            populateProjectCards(data);
+            console.log('Fetched remote data:', data);
+            if (data && data.record) {
+                populateProjectCards(data.record.projectData);
+            } else {
+                console.error('Unexpected data format:', data);
+            }
         })
         .catch(error => {
             console.error('Error fetching remote data:', error);
