@@ -28,5 +28,13 @@ Changes made in part 5:
 
     * Since wider screens could get the "mobile" view, the "Projects" and "Lab" links no longer get dropdown tables in mobile view.
 
-* 
+* Fixed page margins and padding
+
+    * Removed gap between page content and edge of web browser by changing body tag in styles.css
+
+* Styled aboutme
+
+    * Styled aboutme.html in aboutme.css to use centered flex column 
+
+    * Looks much nicer and viewable via scrolling
 
