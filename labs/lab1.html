@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Lab 1: Canvas</title>
+
+        <link rel="stylesheet" href="../styles.css">
+
+        <style>
+            my-shiny {
+                display: inline-block;
+                padding: 8px;
+                border: 0px;
+                font-size: 32px;
+                font-weight: 300;
+                color: rgb(241, 239, 98);
+                background-color: black;
+            }
+
+        </style>
+        
+        <script src="../components/toggleTheme.js"></script>
+        <script src="../components/navbar.js"></script>
+    </head>
+
+    <body>
+        <header>
+            <custom-navbar data-nested="1"></custom-navbar>
+            <script>initTheme();</script>
+            <noscript>You have Javascript turned off, so there will be limited functionality. In particular, the navbar will only work on the home page.
+
+                <a href="../index.html">Home</a>
+            </noscript>
+
+            <h1>Lab 1: Canvas</h1>
+        </header>
+
+        <main>
+            <canvas id="lab1Canvas">
+                Your browser doesn't support canvases.
+            </canvas>
+
+            <script>
+                let canvas = document.getElementById("lab1Canvas");
+                let ctx = canvas.getContext("2d");
+                ctx.fillStyle = "red";
+                ctx.fillRect(0,0,500,200);
+                ctx.moveTo(100, 25);
+                ctx.lineTo(100, 175);
+                ctx.lineTo(100, 100);
+                ctx.lineTo(200, 100);
+                ctx.lineTo(200, 25);
+                ctx.lineTo(200,175);
+                ctx.stroke();
+                ctx.moveTo(300, 100);
+                ctx.lineTo(300, 175);
+                ctx.stroke();
+                ctx.fillStyle = "black";
+                ctx.fillRect(295, 50, 10, 10);
+            </script>
+            <noscript>Your browser has Javascript turned off. The Canvas won't work.</noscript>
+
+            <p>How'd you like the canvas above? Well, that's not all I can do. Watch this! <br>
+
+                <svg>
+                    <polygon points="50,5 20,95 95,39 5,39 80,95" />
+                </svg>
+            <br>
+            <my-shiny>
+                Shining!
+            </my-shiny>
+            </p>
+        </main>
+    </body>
+
+</html>

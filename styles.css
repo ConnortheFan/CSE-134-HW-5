@@ -1,0 +1,243 @@
+.theme-light {
+    --color-primary: hsl(0, 73%, 97%);
+    --color-secondary: hsl(169, 61%, 79%);
+    --color-accent: hsl(164, 60%, 57%);
+    --font-color: hsl(0, 0%, 0%);
+    --shadow-color: rgba(0,0,0,0.3);
+}
+
+.theme-dark {
+    --color-primary: hsl(0, 0%, 7%);
+    --color-secondary: hsl(235, 81%, 15%);
+    --color-accent: hsl(235, 84%, 29%);
+    --font-color: hsl(0, 0%, 100%);
+    --shadow-color: rgba(255, 255, 255, 0.3);
+}
+
+body {
+    color: var(--font-color);
+    background-color: var(--color-primary);
+}
+
+.navbar {
+    background-color: var(--color-secondary);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    --navbar-padding: 15px;
+    z-index: 1000;
+}
+.navbar-main{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding-right: 1rem;
+    height: 100%;
+}
+.navbar a{
+    text-decoration: none;
+    padding: var(--navbar-padding, 15px);
+    display: block;
+    text-align: center;
+    color: var(--font-color)
+}
+.navbar > ul {
+    height: 100%;
+}
+.navbar li {
+    transition: all 0.5s ease-in;
+}
+.navbar li:hover{
+    background-color: var(--color-accent);
+}  
+.dropdown .dropbtn {
+    font-size: 16px;  
+    border: none;
+    outline: none;
+    color: var(--font-color);
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+.dropdown-content {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: none;
+    position: absolute;
+    background-color: var(--color-primary);
+    box-shadow: 0px 8px 16px 0px --shadow-color;
+    opacity: 0;
+    transition: all 0.5s allow-discrete;
+    border: 1px solid var(--color-secondary);
+}
+.dropdown-content a {
+    float: none;
+    color: var(--font-color);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.dropdown:hover .dropdown-content {
+    opacity: 1;
+    display: block;
+}
+.navbar #menu[type='checkbox'], .navbar #menu-label {
+    display: none;
+}
+
+/* Based on the following article
+ * https://medium.com/@haxzie/dark-and-light-theme-switcher-using-css-variables-and-pure-javascript-zocada-dd0059d72fa2
+ */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    justify-content: center;
+    align-self: center;
+    margin-right: 1rem;
+}
+  
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+  
+.theme-toggle {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+  
+.theme-toggle:before {
+    position: absolute;
+    content: "";
+    height: 40px;
+    width: 40px;
+    left: 0px;
+    bottom: 4px;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    box-shadow: 0 0px 15px #2020203d;
+    background: white url(./assets/night.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+  
+input:checked + .theme-toggle {
+    background-color: #2196f3;
+}
+  
+input:focus + .theme-toggle {
+    box-shadow: 0 0 1px #2196f3;
+}
+  
+input:checked + .theme-toggle:before {
+    -webkit-transform: translateX(24px);
+    -ms-transform: translateX(24px);
+    transform: translateX(24px);
+    background: white url(./assets/sunny.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+  
+.theme-toggle.round {
+    border-radius: 34px;
+}
+  
+.theme-toggle.round:before {
+    border-radius: 50%;
+}
+
+#logo {
+    float: left;
+    display: inline;
+    font-weight: bolder;
+    padding: var(--navbar-padding, 15px);
+    margin: 0;
+}
+
+header {
+    padding-top: 2em;
+    font-size: 1.5em;
+}
+header h1 {
+    text-align: center;
+}
+header p {
+    text-align: center;
+}
+
+.flex-main {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    font-size: 1.5em;
+}
+
+.wip {
+    transform: rotate(18deg) translate(2rem,10rem);
+}
+img {
+    max-width: 100%;
+}
+
+@media (max-width:815px) {
+    input[type="checkbox"]:not(:checked) + ul {
+        display: none;
+    }
+    
+    .navbar {
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-left: 0;
+        margin-right: 0;
+        background-color: var(--color-secondary);
+    }
+    .navbar-main {
+        display: block;
+    } 
+    .navbar ul:last-child {
+        width: 100%;
+        flex-basis: 100%;
+    }
+    nav ul li {
+        margin-bottom: 0;
+        width: 100%;
+        text-align: right;
+        padding: 0.5em;
+    }
+    .navbar #menu-label {
+        text-align: right;
+        display: block;
+        padding: 0.5em;
+        line-height: 1.6em;
+        align-self: center;
+        order: 2;
+    }
+    .navbar #switch {
+        order: 1;
+    }
+} 
+
+

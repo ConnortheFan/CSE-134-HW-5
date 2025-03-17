@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Contact Me</title>
+
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="contactme.css">
+    </head>
+
+    <body>
+
+        <header>
+            <nav class="navbar">
+                <a href="./index.html" id="logo">ConnortheFan</a>
+                <label for="menu" tabindex="0">Menu</label>
+                <input id="menu" type="checkbox">
+                <ul class="navbar-main">
+                    <li><a href="./index.html">Home</a></li>
+
+                    <li class="dropdown">
+                        <a href="./projects/index.html" class="dropdown-btn">Projects</a>
+
+                        <ul class="dropdown-content">
+                            <li><a href="./projects/sudokusolver.html">Sudoku Solver</a></li>
+                            <li><a href="./projects/project2.html">Project 2</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="./labs/index.html" class="dropdown-btn">Labs</a>
+                    
+                        <ul class="dropdown-content">
+                            <li><a href="./labs/lab1.html">Lab 1</a></li>
+                            <li><a href="./labs/lab2.html">Lab 2</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li><a href="./aboutme.html">About Me</a></li>
+
+                    <li><a href="./contactme.html">Contact Me</a></li>
+
+                    <li><a href="./tags.html">Tags</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <hgroup>
+                <h1>Contact Me</h1>
+
+                <p>To contact me, either reach out at
+                    <address>
+                    email (personal): connorthefan@gmail.com <br>
+                    email (school): cjfan@ucsd.edu <br>
+                    tel: 562-732-3817
+                    </address>
+                <br>
+                or fill out the form. 
+                <br>
+                (The form doesn't actually send anything, it's just for show.)
+                </p>
+            </hgroup>
+
+
+            <form class="contact-form" action="https://httpbin.org/post" method="post">
+                <fieldset id="contact-info">
+                    <legend>Contact Information</legend>
+
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required maxlength="50" placeholder="John Doe" pattern="[a-zA-Z\s]*">
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" maxlength="50" placeholder="example@example.com">
+
+                    <label for="tel">Phone Number:</label>
+                    <input type="tel" id="tel" name="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890">
+                </fieldset>
+
+                <fieldset id="message-info">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="10" required placeholder="Hi Connor, I just wanted you to know that your website is awesome!" maxlength="1000"></textarea>
+                    <small id="remaining-chars">1000 characters remaining</small>
+                </fieldset>
+
+                <input type="hidden" id="possible_bot" name="possible_bot" value="true">
+
+                <input type="hidden" id="form-errors" name="form-errors" value="">
+
+                <button type="submit">Submit</button>
+
+                <output id="error-message"></output>
+                <output id="info-message"></output>
+            </form>
+        </main>
+
+        <script>
+            
+            const name = document.getElementById('name');
+            const email = document.getElementById('email');
+            const tel = document.getElementById('tel');
+            const message = document.getElementById('message');
+            const remainingChars = document.getElementById('remaining-chars');
+            const errorMessage = document.getElementById('error-message');
+            const form_errorsInput = document.getElementById('form-errors');
+            const form_errors = [];
+
+            function showError(message) {
+                errorMessage.textContent = message;
+                errorMessage.style.display = 'block';
+                errorMessage.style.opacity = 1;
+                setTimeout(() => {
+                    errorMessage.style.opacity = 0;
+                    errorMessage.style.display = 'none';
+                }, 1000);
+            }
+
+            name.addEventListener('input', (event) => {
+                if (name.validity.patternMismatch) {
+                    name.setCustomValidity('Please enter a valid name (only letters and spaces)');
+                    showError('Please enter a valid name (only letters and spaces)');
+                    name.classList.add('error');
+                    if (form_errors.indexOf('Invalid name') === -1) {
+                        form_errors.push('Invalid name');
+                    }
+                } else {
+                    name.setCustomValidity('');
+                    name.classList.remove('error');
+                    if (form_errors.indexOf('Invalid name') !== -1) {
+                        form_errors.splice(form_errors.indexOf('Invalid name'), 1);
+                    }
+                }
+            });
+
+            email.addEventListener('blur', (event) => {
+                if (email.validity.typeMismatch) {
+                    email.setCustomValidity('Please enter a valid email address');
+                    showError('Please enter a valid email address');
+                    email.classList.add('error');
+                    if (form_errors.indexOf('Invalid email') === -1) {
+                        form_errors.push('Invalid email');
+                    }
+                } else {
+                    email.setCustomValidity('');
+                    email.classList.remove('error');
+                    if (form_errors.indexOf('Invalid email') !== -1) {
+                        form_errors.splice(form_errors.indexOf('Invalid email'), 1);
+                    }
+                }
+            });
+
+            tel.addEventListener('blur', (event) => {
+                if (tel.validity.patternMismatch) {
+                    tel.setCustomValidity('Please enter a valid phone number (123-456-7890)');
+                    showError('Please enter a valid phone number (123-456-7890)');
+                    tel.classList.add('error');
+                    if (form_errors.indexOf('Invalid phone number') === -1) {
+                        form_errors.push('Invalid phone number');
+                    }
+                } else {
+                    tel.setCustomValidity('');
+                    tel.classList.remove('error');
+                    if (form_errors.indexOf('Invalid phone number') !== -1) {
+                        form_errors.splice(form_errors.indexOf('Invalid phone number'), 1);
+                    }
+                }
+            });
+
+            const isTel = (string) => /^[0-9-]*$/.test(string);
+            tel.addEventListener('input', (event) => {
+                if (!isTel(tel.value)) {
+                    tel.setCustomValidity('Please enter a valid phone number (123-456-7890)');
+                    showError('Please enter a valid phone number (123-456-7890)');
+                    tel.classList.add('error');
+                    if (form_errors.indexOf('Invalid phone number') === -1) {
+                        form_errors.push('Invalid phone number');
+                    }
+                } else {
+                    tel.setCustomValidity('');
+                    tel.classList.remove('error');
+                    if (form_errors.indexOf('Invalid phone number') !== -1) {
+                        form_errors.splice(form_errors.indexOf('Invalid phone number'), 1);
+                    }
+                }
+            });
+
+            message.addEventListener('input', (event) => {
+                let remaining = 1000 - message.value.length;
+                remainingChars.textContent = `${remaining} characters remaining`;
+                if (remaining > 500) {
+                    remainingChars.style.color = 'black';
+                } else if (remaining > 100) {
+                    remainingChars.style.color = 'orange';
+                } else {
+                    remainingChars.style.color = 'red';
+                }
+                if (message.validity.tooLong) {
+                    message.setCustomValidity('Message is too long (max 1000 characters)');
+                    showError('Message is too long (max 1000 characters)');
+                    message.classList.add('error');
+                    if (form_errors.indexOf('Message too long') === -1) {
+                        form_errors.push('Message too long');
+                    }
+                } else {
+                    message.setCustomValidity('');
+                    message.classList.remove('error');
+                    if (form_errors.indexOf('Message too long') !== -1) {
+                        form_errors.splice(form_errors.indexOf('Message too long'), 1);
+                    }
+                }
+            });
+
+            document.querySelector('form').addEventListener('submit', (event) => {
+                form_errorsInput.value = JSON.stringify(form_errors);
+            });
+        </script>
+    </body>
+
+</html>

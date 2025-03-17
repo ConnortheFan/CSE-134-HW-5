@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+
+        <title>About Me</title>
+
+        <link rel="stylesheet" href="styles.css">
+
+        <script src="components/toggleTheme.js"></script>
+        <script src="components/navbar.js"></script>
+    </head>
+
+    <body>
+        <header>
+            <custom-navbar data-nested="0"></custom-navbar>
+            <script>initTheme();</script>
+
+            <noscript>You have Javascript turned off, so there will be limited functionality. In particular, the navbar will only work on the home page.
+
+                <a href="./index.html">Home</a>
+            </noscript>
+
+            <hgroup>
+                <h1>About Me</h1>
+
+                <p>Hi, so glad you wanted to know me better.</p>
+            </hgroup>
+        </header>
+
+        <main>
+            <figure>
+                <img src="assets/placeholder-profile.jpg" alt="Connor's Picture">
+
+                <figcaption>Connor Fan - placeholder</figcaption>
+            </figure>
+            
+            <p>My name is Connor Fan, and as of making this website, I'm in my 3rd year undergraduate at the University of California - San Diego studying Computer Science. I will be graduating in Jun 2026, so if this isn't updated, just let me know.</p>
+
+            <details>
+                <summary>Relevant Coursework</summary>
+                <ul>
+                    <li>Software Development (CSE 110)</li>
+                    <li>Front-end Web Development (CSE 134B)</li>
+                    <li>Algorithms (CSE 101)</li>
+                    <li>Computer Vision (CSE idr)</li>
+                    <li>Recommender Systems (CSE 158)</li>
+                    <li>Circuits/Introduction to Hardware (CSE 140 & 140L)</li>
+                </ul>
+                <p>And more. I'll make this list fully exhaustive and adjust the order as I take more classes and find the time to get their name and number.</p>
+            </details>
+
+            <details>
+                <summary>Programming Languages and Proficiency</summary>
+                
+                
+                
+                <table>
+                    <caption>Programming Languages</caption>
+                    <colgroup>
+                        <col span="3"> 
+                    </colgroup>
+
+                    <tr>
+                        <th>Language</th>
+                        <th>Proficiency</th>
+                        <th>Time Used</th>
+                    </tr>
+                    <tr>
+                        <td>Python</td>
+                        <td>High</td>
+                        <td>5 years</td>
+                    </tr>
+                    <tr>
+                        <td>Java</td>
+                        <td>Med-High</td>
+                        <td>1/2 Year</td>
+                    </tr>
+                    <tr>
+                        <td>C/C++</td>
+                        <td>Med-High</td>
+                        <td>2 years</td>
+                    </tr>
+                    <tr>
+                        <td>HTML</td>
+                        <td><del>Low</del><ins>Med</ins></td>
+                        <td>1/2 Year</td>
+                    </tr>
+                </table>
+            </details>
+
+            <details>
+                <summary>Hobbies</summary>
+                <p></p>
+                <dl>
+                    <dt>Sudoku</dt>
+                    <dd>I'm a bit of an addict</dd>
+
+                    <dt>IdleOn</dt>
+                    <dd>Just a game I play very often. It's an idle game, so it runs while I'm away working.</dd>
+
+                    <dt>Friends</dt>
+                    <dd>Can you call friends a hobby? Well I do enjoy hanging out with them. Here's a piece of art from one of my highschool friends.<br>
+                        <picture>
+                            <source media="(min-width:2000px)" srcset="assets/Starry-Midafternoon.jpg" alt="Starry Midafternoon" width="auto">
+                            <img src="assets/Starry-Midafternoon-downscaled.png" alt="Starry Midafternoon" width="500">
+                        </picture>
+                        <br>
+                        <cite>Starry Midafternoon</cite> by Madison Plotkin. Painted in 2022.
+                    </dd>
+
+                    <dt>Jokes</dt>
+                    <dd>I do enjoy my share of jokes. The kind that make you groan. Here's one from John.
+                        <br>
+                        <blockquote>
+                            <details>
+                                <summary>What do you call a man with no arms and no legs in the doorway?</summary>
+                                <p>Matt</p>
+                            </details>
+                            <details>
+                                <summary>What do you call a man with no arms and no legs in the pool?</summary>
+                                <p>Bob</p>
+                            </details>
+                            <details>
+                                <summary>What do you call a man with no arms and no legs on the wall?</summary>
+                                <p>Art</p>
+                            </details>
+                            <details>
+                                <summary>What do you call a man with no arms and no legs in the hole?</summary>
+                                <p>Phil</p>
+                            </details>
+                            <details>
+                                <summary>What do you call a man with no arms and no legs in the fireplace?</summary>
+                                <p>Cole</p>
+                            </details>
+
+
+                        </blockquote>
+
+                    </dd>
+
+                    <dt>Kendo</dt>
+                    <dd>I'm a bit of a swordfighter</dd>
+
+                    <dt>Water Sports</dt>
+                    <dd>Yeah, I do swimming and water polo, and I think I'm pretty good at them (for swimming at least). Was in varsity for both in all 4 highschool years.<br>Also, not those water sports. Get your mind out of the gutter.</dd>
+
+                    <dt>Squash</dt>
+                    <dd>The sport, not the vegetable.</dd>
+
+                    <dt>Reading</dt>
+                    <dd>I read a lot, like a lot a lot. Mostly light novels tho, so it's purely for entertainment/enjoyment rather than informational.</dd>
+
+                    <dt>Math/Science</dt>
+                    <dd>I do enjoy my share of math. Sadly, I never got into higher-level for either since I focused on CS. I do know that Einstein's formula 
+                        <math>
+                            <msup>
+                                <mi>E=mc</mi>
+                                <mn>2</mn>
+                            </msup>
+                        </math>
+                        is actually much longer than this. This is just the overly simplified version that works for our "normal" conditions.
+                    </dd>
+
+                </dl>
+            </details>
+        </main>
+    </body>
+
+</html>

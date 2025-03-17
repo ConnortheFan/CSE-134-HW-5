@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+
+        <title>Lab 2: Media</title>
+
+        <link rel="stylesheet" href="../styles.css">
+
+        <script src="../components/toggleTheme.js"></script>
+        <script src="../components/navbar.js"></script>
+    </head>
+
+    <body>
+        <header>
+            <custom-navbar data-nested="1"></custom-navbar>
+            <script>initTheme();</script>
+            <noscript>You have Javascript turned off, so there will be limited functionality. In particular, the navbar will only work on the home page.
+
+                <a href="../index.html">Home</a>
+            </noscript>
+
+            <h1>Lab 2: Media</h1>
+        </header>
+
+        <main>
+            <h2>Audio</h2>
+
+            <p>This is funny sound clip from one of my good friends, Al. <br>
+            You can use <kbd>space</kbd> to pause/resume the audio once focused.
+            </p>
+
+            <audio controls>
+                <source src="../assets/Al-Ringtone.mp3" type="audio/mpeg">
+                Your browser does not support this audio.
+            </audio>
+
+            <p>Meanwhile, I couldn't think of a good video to add, since I also didn't want to just throw a massive file onto this website, so here's some web-devlopment I was doing. (guess what website I was working on)</p>
+
+            <video controls autoplay muted>
+                <source src="../assets/development-recording.mp4" type="video/mp4">
+                Your browser does not support this video.
+            </video>
+
+            <pre>
+                Well, that's all I have for tags.
+
+                I still need to make 2 custom elements, though.
+
+                This one's <code>pre</code>, so I can do stuff      like      this.
+            </pre>
+        </main>
+    </body>
+
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<html lang="en" class="theme-light">
+    <head>
+        <meta charset="utf-8">
+
+        <title>Connor's Home Page</title>
+
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="index.css">
+
+        <script src="components/customElement.js"></script>
+        <script src="components/toggleTheme.js"></script>
+        <script src="components/navbar.js"></script>
+        
+        <meta property="og:title" content="Connor Fan's webpage">
+        <meta property="og:type" content="article">
+        <meta property="og:image" content="https://dreamy-elf-c636de.netlify.app/assets/Starry-Midafternoon.jpg">
+        <meta property="og:url" content="https://dreamy-elf-c636de.netlify.app/">
+        <meta name="twitter:card" content="summary_large_image">   
+    </head>
+
+    <body>
+        <header>
+            <custom-navbar data-nested="0"></custom-navbar>
+            <script>initTheme();</script>
+            <noscript>
+                <nav class="navbar">
+                    <a href="./index.html" id="logo">ConnortheFan</a>
+                    <label for="menu" id="menu-label" tabindex="0">Menu</label>
+                    <input id="menu" type="checkbox">
+                    <ul class="navbar-main">
+                        <li><a href="./index.html">Home</a></li>
+                
+                        <li class="dropdown">
+                            <a href="./projects/index.html" class="dropdown-btn">Projects</a>
+                
+                            <ul class="dropdown-content">
+                                <li><a href="./projects/sudokusolver.html">Sudoku Solver</a></li>
+                                <li><a href="./projects/project2.html">Project 2</a></li>
+                            </ul>
+                        </li>
+                
+                        <li class="dropdown">
+                            <a href="./labs/index.html" class="dropdown-btn">Labs</a>
+                        
+                            <ul class="dropdown-content">
+                                <li><a href="./labs/lab1.html">Lab 1</a></li>
+                                <li><a href="./labs/lab2.html">Lab 2</a></li>
+                            </ul>
+                        </li>
+                        
+                        <li><a href="./aboutme.html">About Me</a></li>
+                
+                        <li><a href="./contactme.html">Contact Me</a></li>
+                
+                        <li><a href="./tags.html">Tags</a></li>
+                    </ul>
+                </nav>
+            </noscript>
+
+            <hgroup>
+                <h1><div id="handwave">&#128075</div> Welcome to <b>Connor Fan's</b> <em>portfolio page!</em></h1>
+
+                <p>This entire website was made from scratch by myself purely from HTML, CSS, and Javascript.</p>
+
+                <noscript>You have Javascript turned off, so there will be limited functionality. In particular, the navbar will only work on the home page.
+
+                    <a href="./index.html">Home</a>
+                </noscript>
+            </hgroup>
+        </header>
+
+        <main class="flex-main">
+            <section id="section1">
+                <h2>Who am I?</h2>
+
+                <picture>
+                    <img src="assets/placeholder-profile.jpg" alt="Connor's placeholder picture">
+                </picture>
+
+                <p>Hi! Nice to meet you. I'm Connor Fan, and as of making this website, a 3rd year Computer Science undergraduate student at UC San Diego.</p>
+                
+                <p>For more detailed information about me (to get to know me more personally), go to <a href="./aboutme.html">About Me</a>.</p>
+
+                <p>I'm currently looking for a paid internship, so if anyone visiting is interested, feel free to contact me  <a href="contactme.html">here</a>.</p>
+            </section>
+
+            <hr>
+
+            <section id="section2">
+                <hgroup>
+                    <h2>Cool Projects</h2>
+
+                    <aside>
+                        <p>Here's where I will frontpage all my cool projects that I've done. I don't really have much for it now, but hopefully, it will be completely filled out when I'm done with it and have more experience.</p>
+                    </aside>
+                </hgroup>
+                <section id="section2-1">
+                    <h3>Sudoku Solver</h3>
+
+                    <h4>Teaching you how to algorithmically solve <strong>any</strong> sudoku</h4>
+
+                    <p>Have you ever been stuck on a <strong>really hard</strong> Sudoku? Well I have and it <em>sucks</em>, a lot. <br> Even though I am a bit of a Sudoku addict (especially with variants), I still sometimes struggle to see just the one move that will let colapse the puzzle. To fix this, and also to teach my friends how to do Sudoku as well, I made Sudoku Solver!</p>
+
+                    <p>To learn more, see my <a href="projects/sudokusolver.html">Sudoku Solver page</a>.</p>
+
+                    <picture id="sudoku">
+                        <img src="assets/Sudoku_Puzzle_by_L2G-20050714_standardized_layout.png" alt="stock Sudoku board">
+                        <br>
+                        <caption>Stock sudoku board from <a href="https://en.wikipedia.org/wiki/Sudoku">Wikipedia</a></caption>
+                    </picture>
+                </section>
+            </section>
+            <hr>
+        </main>
+
+        <footer>
+            <address>
+                Contact Me:<br>
+                email (personal): connorthefan@gmail.com<br>  
+                email (school): cjfan@ucsd.edu<br>
+                tel: 562-732-3817
+            </address>
+
+            <p>Special font Hanged Letters by <cite>Hareesh Seela</cite></p>
+        </footer>
+
+        <console-hello></console-hello>
+    </body>
+</html>
