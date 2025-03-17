@@ -1,5 +1,5 @@
 .theme-light {
-    --color-primary: hsl(0, 73%, 97%);
+    --color-primary: hsl(0, 0%, 100%);
     --color-secondary: hsl(169, 61%, 79%);
     --color-accent: hsl(164, 60%, 57%);
     --font-color: hsl(0, 0%, 0%);
@@ -17,6 +17,8 @@
 body {
     color: var(--font-color);
     background-color: var(--color-primary);
+    margin: 0;
+    padding: 0;
 }
 
 .navbar {
