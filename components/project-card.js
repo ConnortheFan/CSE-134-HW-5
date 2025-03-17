@@ -9,6 +9,12 @@ class ProjectCard extends HTMLElement {
     }
 
     render() {
+        const picture = this.getAttribute('picture');
+        const alt = this.getAttribute('alt') || 'Project Image';
+        const title = this.getAttribute('title');
+        const description = this.getAttribute('description');
+        const link = this.getAttribute('link');
+
         this.shadowRoot.innerHTML = `
             <style>
                 .card {
@@ -20,17 +26,34 @@ class ProjectCard extends HTMLElement {
                     display: flex;
                     flex-direction: row;
                     align-items: center;
+                    justify-content: space-between;
                 }
                 .card h2 {
                     margin: 0 0 8px;
                     font-size: 1.5em;
                 }
+                .card h2 a {
+                    text-decoration: none;
+                    color: inherit;
+                }
                 .card p {
                     margin: 0;
                     color: #666;
                 }
+                .card .content {
+                    flex: 1;
+                }
                 .card picture {
                     margin-left: 16px;
+                    flex: 0 0 25%; /* Ensure the picture takes up 25% of the card's width */
+                }
+                .card picture img {
+                    width: 100%;
+                    height: auto;
+                }
+                .card .learn-more {
+                    display: inline-block;
+                    margin-top: 10px;
                 }
                 @media (max-width: 600px) {
                     .card {
@@ -39,18 +62,17 @@ class ProjectCard extends HTMLElement {
                     .card picture {
                         margin-left: 0;
                         margin-top: 16px;
+                        flex: 0 0 100%; /* Ensure the picture takes up 100% of the card's width on small screens */
                     }
                 }
             </style>
             <div class="card">
-                <div>
-                    <h2>${this.getAttribute('title')}</h2>
-                    <p>${this.getAttribute('description')}</p>
-                    <a href=${this.getAttribute('link')}>Learn More</a>
+                <div class="content">
+                    <h2><a href="${link}">${title}</a></h2>
+                    <p>${description}</p>
+                    <a href="${link}" class="learn-more">Learn More</a>
                 </div>
-                <picture>
-                    <img src=${this.getAttribute('picture')} alt=${this.getAttribute('alt')}>
-                </picture>
+                ${picture ? `<picture><img src="${picture}" alt="${alt}"></picture>` : ''}
             </div>
         `;
     }

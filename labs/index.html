@@ -10,6 +10,7 @@
 
         <script src="../components/toggleTheme.js"></script>
         <script src="../components/navbar.js"></script>
+        <script src="../components/project-card.js"></script>
     </head>
 
     <body>
@@ -29,17 +30,17 @@
         </header>
 
         <main class="flex-main">
-            <hgroup>
-                <h2><a href="lab1.html">Lab 1: Canvas</a></h2>
+            <project-card
+                title="Lab 1: Canvas"
+                description="Using the <code>canvas</code> and <code>svg</code> tags to draw some pictures."
+                link="lab1.html"
+            ></project-card>
 
-                <p>Using the <code>canvas</code> and <code>svg</code> tags to draw some pictures.</p>
-            </hgroup>
-
-            <hgroup>
-                <h2><a href="lab2.html">Lab 2: Media</a></h2>
-
-                <p>Using the <code>audio</code> and <code>video</code> tags to show some audio and videos.</p>
-            </hgroup>
+            <project-card
+                title="Lab 2: Media"
+                description="Using the <code>audio</code> and <code>video</code> tags to show some audio and videos."
+                link="lab2.html"
+            ></project-card>
         </main>
     </body>
 
