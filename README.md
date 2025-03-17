@@ -32,9 +32,12 @@ Changes made in part 5:
 
     * Removed gap between page content and edge of web browser by changing body tag in styles.css
 
+    * Added padding to required areas so tags.html and certain headers looked nicer
+
 * Styled aboutme
 
     * Styled aboutme.html in aboutme.css to use centered flex column 
 
     * Looks much nicer and viewable via scrolling
 
+    * Made fixes to make it compatable with dark mode

@@ -4,6 +4,7 @@
     --color-accent: hsl(164, 60%, 57%);
     --font-color: hsl(0, 0%, 0%);
     --shadow-color: rgba(0,0,0,0.3);
+    --main-color: #f0f0f0;
 }
 
 .theme-dark {
@@ -12,6 +13,7 @@
     --color-accent: hsl(235, 84%, 29%);
     --font-color: hsl(0, 0%, 100%);
     --shadow-color: rgba(255, 255, 255, 0.3);
+    --main-color: #2f2c2c;
 }
 
 body {
@@ -187,6 +189,7 @@ header h1 {
 }
 header p {
     text-align: center;
+    padding: 0 16px;
 }
 
 .flex-main {
@@ -196,6 +199,7 @@ header p {
 
 main {
     font-size: 1.5em;
+    padding: 0 16px;
 }
 
 img {
