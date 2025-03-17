@@ -31,23 +31,11 @@
             <button id="load-remote">Load Remote</button>
         </div>
 
-        <main class="flex-main">
-            <project-card
-                title="Sudoku Solver"
-                picture="../assets/Sudoku_Puzzle_by_L2G-20050714_standardized_layout.png"
-                alt="Sudoku from Wikipedia"
-                description="This project was a personal project that I made to help teach people how to algorithmically solve Sudokus. When you run it, you should just input an unsolved Sudoku and it will output all the steps required to solve it. These steps will be detailed, so hopefully you are able to learn from them."
-                link="sudokusolver.html"
-            ></project-card>
-
-            <project-card
-                title="Project 2: WIP"
-                description="Placeholder project 2, not ready yet."
-                link="project2.html"
-                picture="../assets/under-construction.jpg"
-                alt="Under Construction"
-            ></project-card>
+        <main class="flex-main" id="project-cards-container">
+            <p>Try pressing Load Local (Recommended) or Load Remote to see my projects!</p>
         </main>
+        <script src="../components/loadButton.js"></script>
+
     </body>
 
 </html>

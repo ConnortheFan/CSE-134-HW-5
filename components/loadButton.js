@@ -39,22 +39,22 @@ function populateProjectCards(data) {
 }
 
 // Example data to store in localStorage
-const exampleData = [
+const projectData = [
     {
-        title: 'Project 1',
-        description: 'Description for project 1',
-        link: 'https://example.com/project1',
-        picture: 'https://example.com/project1.jpg',
-        alt: 'Project 1 Image'
+        title: "Sudoku Solver",
+        description: "This project was a personal project that I made to help teach people how to algorithmically solve Sudokus. When you run it, you should just input an unsolved Sudoku and it will output all the steps required to solve it. These steps will be detailed, so hopefully you are able to learn from them.",
+        link: "sudokusolver.html",
+        picture: "../assets/Sudoku_Puzzle_by_L2G-20050714_standardized_layout.png",
+        alt: "Sudoku from Wikipedia",
     },
     {
-        title: 'Project 2',
-        description: 'Description for project 2',
-        link: 'https://example.com/project2',
-        picture: 'https://example.com/project2.jpg',
-        alt: 'Project 2 Image'
+        title: "Project 2: WIP",
+        description: "Placeholder project 2, not ready yet.",
+        link: "project2.html",
+        picture: "../assets/under-construction.jpg",
+        alt: "Under Construction",
     }
 ];
 
 // Store example data in localStorage for testing
-localStorage.setItem('projectCards', JSON.stringify(exampleData));
+localStorage.setItem('projectCards', JSON.stringify(projectData));
